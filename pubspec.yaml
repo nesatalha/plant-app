@@ -36,6 +36,28 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
 
+  # State Management
+  flutter_bloc: ^8.1.6
+  equatable: ^2.0.5
+
+  # Networking
+  dio: ^5.4.1
+
+  # JSON Serialization
+  json_annotation: ^4.8.1
+
+  # Immutable Models
+  freezed_annotation: ^2.4.1
+
+  # Navigation
+  auto_route: ^7.3.2
+
+  # Dependency Injection
+  get_it: ^7.6.4
+
+  # Shared Preferences (for onboarding state)
+  shared_preferences: ^2.2.2
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -46,6 +68,12 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^4.0.0
+
+  # Code Generation
+  build_runner: ^2.4.7
+  freezed: ^2.4.6
+  json_serializable: ^6.7.1
+  auto_route_generator: ^7.3.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
