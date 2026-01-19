@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plant_app/shared/theme/pa_colors.dart';
 
 class PATextStyles {
   static const TextStyle semibold16 = TextStyle(
@@ -16,6 +17,7 @@ class PATextStyles {
   static const TextStyle medium28 = TextStyle(
     fontSize: 28,
     fontWeight: FontWeight.w500,
+    letterSpacing: -1,
     color: Color(0xFF13231B),
   );
 
@@ -30,8 +32,26 @@ class PATextStyles {
     color: const Color(0xFF13231B).withOpacity(0.7),
   );
 
-  static TextStyle regular12 = TextStyle(
+  static TextStyle regular12 = const TextStyle(
     fontSize: 12,
-    color: const Color(0xFF13231BB2),
+    color: Color(0xFF13231BB2),
+  );
+
+  static TextStyle light17 = const TextStyle(
+    fontSize: 17,
+    fontWeight: FontWeight.w300,
+    color: PAColors.white,
+  );
+
+  static TextStyle light27 = const TextStyle(
+    fontSize: 27,
+    fontWeight: FontWeight.w300,
+    color: PAColors.white,
+  );
+
+  static TextStyle bold27 = const TextStyle(
+    fontSize: 27,
+    fontWeight: FontWeight.bold,
+    color: PAColors.white,
   );
 }
