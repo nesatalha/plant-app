@@ -6,4 +6,5 @@ class PAAssets {
   static const String scanner = 'assets/images/scanner.png';
   static const String herbalSpaTreatment = 'assets/images/herbal_spa_treatment.png';
   static const String speedometer = 'assets/images/speedometer.png';
+  static const String homeHeaderBg = 'assets/images/home_header_bg.png';
 }
