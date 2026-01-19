@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:plant_app/core/constants/assets.dart';
 import 'package:plant_app/core/constants/pa_dimens.dart';
 import 'package:plant_app/features/onboarding/presentation/widgets/onboarding_features_slider.dart';
+import 'package:plant_app/features/onboarding/presentation/widgets/payment_options_list_widget.dart';
 import 'package:plant_app/shared/extensions/widget_extensions.dart';
 import 'package:plant_app/shared/theme/pa_colors.dart';
+import 'package:plant_app/shared/widgets/pa_button.dart';
 import 'package:plant_app/shared/widgets/pa_logo.dart';
 import 'package:plant_app/shared/widgets/pa_scaffold.dart';
 import 'package:plant_app/shared/widgets/pa_text.dart';
@@ -33,7 +35,7 @@ class PaywallPage extends StatelessWidget {
               child: InkWell(
                 onTap: () {},
                 child: Container(
-                  margin: EdgeInsetsDirectional.only(end: PADimens.px20),
+                  margin: const EdgeInsetsDirectional.only(end: PADimens.px20),
                   height: PADimens.px24,
                   width: PADimens.px24,
                   alignment: Alignment.center,
@@ -79,7 +81,23 @@ class PaywallPage extends StatelessWidget {
                         style: PATextStyles.light17.copyWith(color: PAColors.white.withOpacity(0.7)),
                         textAlign: TextAlign.start,
                       ).padding(const EdgeInsetsDirectional.only(start: PADimens.px20)),
-                      const OnboardingFeaturesSlider().padding(EdgeInsetsDirectional.symmetric(vertical: PADimens.px24))
+                      const OnboardingFeaturesSlider()
+                          .padding(const EdgeInsetsDirectional.symmetric(vertical: PADimens.px24)),
+                      const PaymentOptionsListWidget()
+                          .padding(const EdgeInsetsDirectional.symmetric(horizontal: PADimens.px20)),
+                      PAButton(
+                        text: "Try free for 3 days",
+                        onPressed: () {},
+                      ).padding(
+                        const EdgeInsetsDirectional.symmetric(horizontal: PADimens.px20).copyWith(top: PADimens.px24),
+                      ),
+                      PAText(
+                        r"After the 3-day free trial period you’ll be charged ₺274.99 per year unless you cancel before the trial expires. Yearly Subscription is Auto-Renewable",
+                        style: PATextStyles.light9.copyWith(color: PAColors.white.withOpacity(0.52)),
+                        textAlign: TextAlign.center,
+                      ).padding(
+                          const EdgeInsetsDirectional.symmetric(horizontal: PADimens.px20, vertical: PADimens.px10)),
+                      _buildTermsAndConditionsLinks(),
                     ],
                   ),
                 ),
@@ -87,6 +105,19 @@ class PaywallPage extends StatelessWidget {
             ],
           )
         ],
+      ),
+    );
+  }
+
+  Widget _buildTermsAndConditionsLinks() {
+    //TODO convert to actual links
+    return SafeArea(
+      top: false,
+      child: PAText(
+        r"Terms • Privacy • Restore",
+        style: PATextStyles.regular12,
+        textAlign: TextAlign.center,
+        color: PAColors.white.withOpacity(0.5),
       ),
     );
   }
