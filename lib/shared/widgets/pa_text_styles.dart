@@ -14,6 +14,12 @@ class PATextStyles {
     color: Color(0xFF13231B),
   );
 
+  static const TextStyle medium20 = TextStyle(
+    fontSize: 20,
+    fontWeight: FontWeight.w500,
+    color: PAColors.white,
+  );
+
   static const TextStyle medium28 = TextStyle(
     fontSize: 28,
     fontWeight: FontWeight.w500,
