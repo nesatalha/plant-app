@@ -2,6 +2,9 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:plant_app/core/constants/assets.dart';
 import 'package:plant_app/core/constants/pa_dimens.dart';
+import 'package:plant_app/core/di/injection.dart' as di;
+import 'package:plant_app/core/router/app_router.dart';
+import 'package:plant_app/core/utils/shared_preferences_service.dart';
 import 'package:plant_app/features/onboarding/presentation/widgets/onboarding_features_slider.dart';
 import 'package:plant_app/features/onboarding/presentation/widgets/payment_options_list_widget.dart';
 import 'package:plant_app/shared/extensions/widget_extensions.dart';
@@ -33,7 +36,10 @@ class PaywallPage extends StatelessWidget {
             alignment: Alignment.topRight,
             child: SafeArea(
               child: InkWell(
-                onTap: () {},
+                onTap: () {
+                  di.getIt<SharedPreferencesService>().setOnboardingCompleted(true);
+                  context.router.push(const HomeRoute());
+                },
                 child: Container(
                   margin: const EdgeInsetsDirectional.only(end: PADimens.px20),
                   height: PADimens.px24,
@@ -87,7 +93,10 @@ class PaywallPage extends StatelessWidget {
                           .padding(const EdgeInsetsDirectional.symmetric(horizontal: PADimens.px20)),
                       PAButton(
                         text: "Try free for 3 days",
-                        onPressed: () {},
+                        onPressed: () {
+                          di.getIt<SharedPreferencesService>().setOnboardingCompleted(true);
+                          context.router.push(const HomeRoute());
+                        },
                       ).padding(
                         const EdgeInsetsDirectional.symmetric(horizontal: PADimens.px20).copyWith(top: PADimens.px24),
                       ),

@@ -1,19 +1,30 @@
 import 'package:flutter/material.dart';
+
 import 'core/di/injection.dart' as di;
 import 'core/router/app_router.dart';
+import 'core/utils/shared_preferences_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await di.setupDependencyInjection();
-  runApp(const MyApp());
+
+  final sharedPreferencesService = di.getIt<SharedPreferencesService>();
+  final isOnboardingCompleted = await sharedPreferencesService.isOnboardingCompleted();
+
+  runApp(MyApp(isOnboardingCompleted: isOnboardingCompleted));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final bool isOnboardingCompleted;
+
+  const MyApp({
+    super.key,
+    required this.isOnboardingCompleted,
+  });
 
   @override
   Widget build(BuildContext context) {
-    final appRouter = AppRouter();
+    final appRouter = AppRouter(isOnboardingCompleted: isOnboardingCompleted);
 
     return MaterialApp.router(
       title: 'Plant App',
