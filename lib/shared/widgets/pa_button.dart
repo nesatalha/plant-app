@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:plant_app/shared/theme/pa_colors.dart';
+import 'package:plant_app/shared/widgets/pa_text.dart';
+import 'package:plant_app/shared/widgets/pa_text_styles.dart';
 
 class PAButton extends StatelessWidget {
   final String text;
   final VoidCallback? onPressed;
   final bool isLoading;
+  final Color? backgroundColor;
 
   const PAButton({
     super.key,
     required this.text,
     this.onPressed,
     this.isLoading = false,
+    this.backgroundColor,
   });
 
   @override
@@ -23,6 +28,7 @@ class PAButton extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
           ),
+          backgroundColor: backgroundColor ?? PAColors.primary,
         ),
         child: isLoading
             ? const SizedBox(
@@ -33,12 +39,12 @@ class PAButton extends StatelessWidget {
                   valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
                 ),
               )
-            : Text(
+            : PAText(
                 text,
-                style: const TextStyle(fontSize: 16),
+                style: PATextStyles.semibold16,
+                color: PAColors.white,
               ),
       ),
     );
   }
 }
-
