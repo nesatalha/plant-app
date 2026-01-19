@@ -1,6 +1,7 @@
 class PAAssets {
   static const String welcomePageBg = 'assets/images/welcome_page_bg.png';
   static const String onboardingPage1Bg = 'assets/images/onboarding_1_bg.png';
+  static const String onboardingPage2Bg = 'assets/images/onboarding_2_bg.png';
   static const String paywallPageBg = 'assets/images/paywall_page_bg.png';
   static const String paLogo = 'assets/images/pa_logo.png';
   static const String scanner = 'assets/images/scanner.png';
