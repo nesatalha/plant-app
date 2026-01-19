@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:plant_app/core/constants/pa_dimens.dart';
+import 'package:plant_app/core/router/app_router.dart';
 import 'package:plant_app/features/onboarding/presentation/widgets/onboarding_page_1.dart';
 import 'package:plant_app/features/onboarding/presentation/widgets/onboarding_page_2.dart';
 import 'package:plant_app/shared/extensions/widget_extensions.dart';
@@ -33,13 +34,13 @@ class _OnboardingPageState extends State<OnboardingPage> {
   }
 
   void _nextPage() {
-    if (_currentPage < 2) {
+    if (_currentPage != 1) {
       _pageController.nextPage(
         duration: const Duration(milliseconds: 300),
         curve: Curves.easeInOut,
       );
     } else {
-      // Navigate to paywall - will be handled later
+      context.router.push(const PaywallRoute());
     }
   }
 
@@ -52,6 +53,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
             child: PageView(
               controller: _pageController,
               onPageChanged: _onPageChanged,
+              physics: const NeverScrollableScrollPhysics(),
               children: const [
                 OnboardingPage1(),
                 OnboardingPage2(),
