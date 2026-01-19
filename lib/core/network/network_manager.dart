@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:plant_app/core/constants/api_constants.dart';
+import 'package:plant_app/core/constants/app_constants.dart';
 
 class NetworkManager {
   late final Dio _dio;
@@ -8,8 +9,8 @@ class NetworkManager {
     _dio = Dio(
       BaseOptions(
         baseUrl: ApiConstants.baseUrl,
-        connectTimeout: const Duration(seconds: 30),
-        receiveTimeout: const Duration(seconds: 30),
+        connectTimeout: AppConstants.networkTimeOutDuration,
+        receiveTimeout: AppConstants.networkTimeOutDuration,
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json',

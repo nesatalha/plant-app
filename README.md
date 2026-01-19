@@ -12,6 +12,9 @@ A Flutter application for plant identification and care, built with Clean Archit
 - [Code Generation](#code-generation)
 - [Running the App](#running-the-app)
 - [API Configuration](#api-configuration)
+- [Naming Conventions](#naming-conventions)
+- [Commit Message Convention](#commit-message-convention)
+- [Design System](#design-system)
 
 ## ✨ Features
 
@@ -245,6 +248,69 @@ class ApiConstants {
   - Feature prefix groups related states together
   - State name clearly describes the current state
   - Helps with debugging and state management
+
+## 📝 Commit Message Convention
+
+This project follows a consistent commit message format for better project history and collaboration.
+
+### Format
+
+```
+<Area>: <action> <description>
+```
+
+### Components
+
+1. **Area** (Required): The feature or module affected
+   - `Home`: Changes related to the home feature
+   - `Onboarding`: Changes related to onboarding flow
+   - `Develop`: Core/development changes (DI, network, router, shared utilities)
+
+2. **Action** (Required): The type of change
+   - `add`: New feature, widget, or functionality
+   - `update`: Modifications to existing code
+   - `fix`: Bug fixes
+   - `refactor`: Code restructuring without changing functionality
+   - `remove`: Deletion of code or features
+
+3. **Description** (Required): Brief description of what changed
+
+### Examples
+
+```bash
+# Feature additions
+Home: add home page
+Home: add bottom nav bar
+Onboarding: add onboarding page 2
+
+# Updates
+Onboarding: update paywall page button actions
+Develop: update dependency injection
+Develop: update readme
+
+# Fixes
+Onboarding: fix page layouts
+Develop: fix analyze issues & remove magic numbers
+
+# Multiple changes
+Onboarding: update paywall page & add feature icons
+```
+
+### Guidelines
+
+- Use present tense ("add" not "added")
+- Keep descriptions concise but clear
+- Use lowercase for area and action
+- Capitalize only the first word of the description (unless it's a proper noun)
+- Use `&` for multiple related changes in one commit
+- Separate unrelated changes into different commits
+
+### Benefits
+
+- **Easy navigation**: Quickly find commits related to specific features
+- **Clear history**: Understand project evolution at a glance
+- **Better collaboration**: Team members can easily identify relevant changes
+- **Automated tooling**: Can be used for changelog generation
 
 ## 🎨 Design System
 
