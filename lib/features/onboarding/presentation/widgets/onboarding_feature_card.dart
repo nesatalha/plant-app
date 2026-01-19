@@ -22,9 +22,9 @@ class OnboardingFeatureCard extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(PADimens.px14),
-        color: PAColors.white.withOpacity(0.08),
+        color: PAColors.white.withOpacity(PADimens.opacity008),
       ),
-      constraints: BoxConstraints(
+      constraints: const BoxConstraints(
         minWidth: PADimens.px160,
       ),
       padding: const EdgeInsetsDirectional.all(PADimens.px16),
@@ -33,7 +33,7 @@ class OnboardingFeatureCard extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Container(
-            decoration: BoxDecoration(color: PAColors.black.withOpacity(0.24)),
+            decoration: BoxDecoration(color: PAColors.black.withOpacity(PADimens.opacity024)),
             width: PADimens.px36,
             child: Image.asset(icon),
           ),
@@ -44,7 +44,7 @@ class OnboardingFeatureCard extends StatelessWidget {
           PAText(
             description,
             style: PATextStyles.regular12,
-            color: PAColors.white.withOpacity(0.7),
+            color: PAColors.white.withOpacity(PADimens.opacity07),
           ).padding(const EdgeInsetsDirectional.only(top: PADimens.px4)),
         ],
       ),

@@ -36,7 +36,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
   void _nextPage() {
     if (_currentPage != 1) {
       _pageController.nextPage(
-        duration: const Duration(milliseconds: 300),
+        duration: const Duration(milliseconds: PADimens.animationDurationMs),
         curve: Curves.easeInOut,
       );
     } else {

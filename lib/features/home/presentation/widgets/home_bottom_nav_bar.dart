@@ -20,14 +20,14 @@ class HomeBottomNavBar extends StatelessWidget {
     return ClipRRect(
       clipBehavior: Clip.none,
       child: Container(
-        height: 108,
+        height: PADimens.px108,
         decoration: BoxDecoration(
           color: Colors.white,
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.05),
-              blurRadius: 10,
-              offset: const Offset(0, -2),
+              color: Colors.black.withOpacity(PADimens.opacity005),
+              blurRadius: PADimens.shadowBlurRadius10,
+              offset: const Offset(0, PADimens.shadowOffsetY2),
             ),
           ],
         ),
@@ -49,7 +49,7 @@ class HomeBottomNavBar extends StatelessWidget {
                   index: 1,
                   isActive: currentIndex == 1,
                 ),
-                const SizedBox(width: 33),
+                const SizedBox(width: PADimens.px33),
                 _buildNavItem(
                   icon: Icons.local_florist,
                   label: 'My Garden',
@@ -65,23 +65,23 @@ class HomeBottomNavBar extends StatelessWidget {
               ],
             ),
             Positioned(
-              top: -33,
+              top: -PADimens.px33,
               right: 0,
               left: 0,
               child: GestureDetector(
                 onTap: () => onTap(4),
                 child: Container(
-                  width: 66,
-                  height: 66,
+                  width: PADimens.px66,
+                  height: PADimens.px66,
                   decoration: BoxDecoration(
                     color: PAColors.primary,
                     shape: BoxShape.circle,
                     border: Border.all(width: PADimens.px4, color: PAColors.primaryLight),
                     boxShadow: [
                       BoxShadow(
-                        color: PAColors.primary.withOpacity(0.3),
-                        blurRadius: 15,
-                        offset: const Offset(0, 4),
+                        color: PAColors.primary.withOpacity(PADimens.opacity03),
+                        blurRadius: PADimens.shadowBlurRadius15,
+                        offset: const Offset(0, PADimens.shadowOffsetY4),
                       ),
                     ],
                   ),
@@ -117,13 +117,13 @@ class HomeBottomNavBar extends StatelessWidget {
             Icon(
               icon,
               color: color,
-              size: 24,
+              size: PADimens.iconSize24,
             ),
             const SizedBox(height: PADimens.px4),
             PAText(
               label,
               style: PATextStyles.regular16.copyWith(
-                fontSize: 12,
+                fontSize: PADimens.fontSize12,
                 color: color,
               ),
             ),

@@ -83,7 +83,7 @@ class HomeHeaderWidget extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: PADimens.px16),
       decoration: BoxDecoration(
-        color: PAColors.white.withOpacity(0.88),
+        color: PAColors.white.withOpacity(PADimens.opacity088),
         borderRadius: BorderRadius.circular(PADimens.px12),
       ),
       child: TextField(
@@ -93,12 +93,12 @@ class HomeHeaderWidget extends StatelessWidget {
           contentPadding: EdgeInsets.zero,
           hintText: 'Search for plants',
           hintStyle: PATextStyles.regular16.copyWith(
-            color: PAColors.mainTextColor.withOpacity(0.3),
+            color: PAColors.mainTextColor.withOpacity(PADimens.opacity03),
           ),
           border: InputBorder.none,
           prefixIcon: Icon(
             Icons.search,
-            color: PAColors.mainTextColor.withOpacity(0.3),
+            color: PAColors.mainTextColor.withOpacity(PADimens.opacity03),
           ),
         ),
       ),

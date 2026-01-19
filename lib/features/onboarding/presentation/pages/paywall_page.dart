@@ -41,9 +41,9 @@ class PaywallPage extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-                          PaLogo(
-                            height: 27,
-                          ).padding(const EdgeInsetsDirectional.only(end: 4)),
+                          const PaLogo(
+                            height: PADimens.px27,
+                          ).padding(const EdgeInsetsDirectional.only(end: PADimens.px4)),
                           PAText(
                             "Premium",
                             style: PATextStyles.light27,
@@ -58,7 +58,7 @@ class PaywallPage extends StatelessWidget {
                       ),
                       PAText(
                         "Access All Features",
-                        style: PATextStyles.light17.copyWith(color: PAColors.white.withOpacity(0.7)),
+                        style: PATextStyles.light17.copyWith(color: PAColors.white.withOpacity(PADimens.opacity07)),
                         textAlign: TextAlign.start,
                       ).padding(const EdgeInsetsDirectional.only(start: PADimens.px20)),
                       const OnboardingFeaturesSlider()
@@ -76,7 +76,7 @@ class PaywallPage extends StatelessWidget {
                       ),
                       PAText(
                         r"After the 3-day free trial period you’ll be charged ₺274.99 per year unless you cancel before the trial expires. Yearly Subscription is Auto-Renewable",
-                        style: PATextStyles.light9.copyWith(color: PAColors.white.withOpacity(0.52)),
+                        style: PATextStyles.light9.copyWith(color: PAColors.white.withOpacity(PADimens.opacity052)),
                         textAlign: TextAlign.center,
                       ).padding(
                           const EdgeInsetsDirectional.symmetric(horizontal: PADimens.px20, vertical: PADimens.px10)),
@@ -96,16 +96,16 @@ class PaywallPage extends StatelessWidget {
                   di.getIt<SharedPreferencesService>().setOnboardingCompleted(true);
                   context.router.replace(const HomeRoute());
                 },
-                elevation: 2.0,
-                fillColor: PAColors.black.withOpacity(0.4),
-                constraints: BoxConstraints(minWidth: 0.0),
+                elevation: PADimens.px2,
+                fillColor: PAColors.black.withOpacity(PADimens.opacity04),
+                constraints: const BoxConstraints(minWidth: 0.0),
+                padding: const EdgeInsets.all(PADimens.px8),
+                shape: const CircleBorder(),
                 child: const Icon(
                   Icons.close,
                   size: PADimens.px16,
                   color: PAColors.white,
                 ),
-                padding: EdgeInsets.all(PADimens.px8),
-                shape: CircleBorder(),
               ),
             ),
           ),
@@ -122,7 +122,7 @@ class PaywallPage extends StatelessWidget {
         r"Terms • Privacy • Restore",
         style: PATextStyles.regular12,
         textAlign: TextAlign.center,
-        color: PAColors.white.withOpacity(0.5),
+        color: PAColors.white.withOpacity(PADimens.opacity05),
       ),
     );
   }

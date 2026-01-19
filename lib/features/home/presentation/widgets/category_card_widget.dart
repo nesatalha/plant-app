@@ -6,10 +6,6 @@ import 'package:plant_app/shared/theme/pa_colors.dart';
 import 'package:plant_app/shared/widgets/pa_text.dart';
 import 'package:plant_app/shared/widgets/pa_text_styles.dart';
 
-abstract class _Constants {
-  static const double maxImgHeight = 152;
-}
-
 class CategoryCardWidget extends StatelessWidget {
   final Category category;
   final VoidCallback? onTap;
@@ -30,9 +26,9 @@ class CategoryCardWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(PADimens.px12),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.05),
-              blurRadius: 10,
-              offset: const Offset(0, 2),
+              color: Colors.black.withOpacity(PADimens.opacity005),
+              blurRadius: PADimens.shadowBlurRadius10,
+              offset: const Offset(0, PADimens.px2),
             ),
           ],
         ),
@@ -49,7 +45,7 @@ class CategoryCardWidget extends StatelessWidget {
                 child: Image.network(
                   category.imageUrl,
                   fit: BoxFit.fitWidth,
-                  height: _Constants.maxImgHeight,
+                  height: PADimens.px152,
                 ),
               ),
             ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plant_app/core/constants/pa_dimens.dart';
 import 'package:plant_app/shared/theme/pa_colors.dart';
 import 'package:plant_app/shared/widgets/pa_text.dart';
 import 'package:plant_app/shared/widgets/pa_text_styles.dart';
@@ -24,18 +25,18 @@ class PAButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: isLoading ? null : onPressed,
         style: ElevatedButton.styleFrom(
-          padding: const EdgeInsets.symmetric(vertical: 16),
+          padding: const EdgeInsets.symmetric(vertical: PADimens.px16),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
+            borderRadius: BorderRadius.circular(PADimens.borderRadius12),
           ),
           backgroundColor: backgroundColor ?? PAColors.primary,
         ),
         child: isLoading
             ? const SizedBox(
-                height: 20,
-                width: 20,
+                height: PADimens.px20,
+                width: PADimens.px20,
                 child: CircularProgressIndicator(
-                  strokeWidth: 2,
+                  strokeWidth: PADimens.px2,
                   valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
                 ),
               )

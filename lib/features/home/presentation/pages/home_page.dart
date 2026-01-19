@@ -81,7 +81,7 @@ class _HomePageViewState extends State<_HomePageView> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           SizedBox(
-                            height: 200,
+                            height: PADimens.px200,
                             child: ListView.builder(
                               scrollDirection: Axis.horizontal,
                               padding: const EdgeInsetsDirectional.symmetric(horizontal: PADimens.px10),
@@ -102,13 +102,14 @@ class _HomePageViewState extends State<_HomePageView> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             GridView.builder(
+                              padding: const EdgeInsets.symmetric(vertical: PADimens.px24),
                               shrinkWrap: true,
                               physics: const NeverScrollableScrollPhysics(),
                               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 2,
-                                crossAxisSpacing: 16,
-                                mainAxisSpacing: 16,
-                                childAspectRatio: 1,
+                                crossAxisCount: PADimens.gridCrossAxisCount,
+                                crossAxisSpacing: PADimens.px16,
+                                mainAxisSpacing: PADimens.px16,
+                                childAspectRatio: PADimens.gridChildAspectRatio,
                               ),
                               itemCount: state.categories.length,
                               itemBuilder: (context, index) {
@@ -121,7 +122,7 @@ class _HomePageViewState extends State<_HomePageView> {
                           ],
                         ),
                       ),
-                      const SizedBox(height: 100), // Space for bottom nav bar
+                      const SizedBox(height: PADimens.px100),
                     ],
                   ),
                 ),

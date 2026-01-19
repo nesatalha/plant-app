@@ -59,15 +59,15 @@ class _PaymentOptionsListWidgetState extends State<PaymentOptionsListWidget> {
                   begin: Alignment.centerRight,
                   end: Alignment.centerLeft,
                   colors: [
-                    PAColors.primary.withOpacity(0.24),
-                    PAColors.primary.withOpacity(0.0),
+                    PAColors.primary.withOpacity(PADimens.opacity024),
+                    PAColors.primary.withOpacity(PADimens.px0),
                   ],
                 )
               : null,
-          color: badge != null && isSelected ? null : PAColors.white.withOpacity(0.05),
+          color: badge != null && isSelected ? null : PAColors.white.withOpacity(PADimens.opacity005),
           border: Border.all(
-            color: isSelected ? PAColors.primary : PAColors.white.withOpacity(0.3),
-            width: 1.5,
+            color: isSelected ? PAColors.primary : PAColors.white.withOpacity(PADimens.opacity03),
+            width: PADimens.px2,
           ),
           borderRadius: BorderRadius.circular(PADimens.px14),
         ),
@@ -75,7 +75,7 @@ class _PaymentOptionsListWidgetState extends State<PaymentOptionsListWidget> {
             ? ClipRRect(
                 borderRadius: BorderRadius.circular(PADimens.px14),
                 child: BackdropFilter(
-                  filter: ImageFilter.blur(sigmaX: 80, sigmaY: 80),
+                  filter: ImageFilter.blur(sigmaX: PADimens.px80, sigmaY: PADimens.px80),
                   child: _buildContent(title, description, isSelected, badge),
                 ),
               )
@@ -100,7 +100,7 @@ class _PaymentOptionsListWidgetState extends State<PaymentOptionsListWidget> {
                   ? const Center(
                       child: Icon(
                         Icons.circle,
-                        size: 10,
+                        size: PADimens.px10,
                         color: PAColors.white,
                       ),
                     )
@@ -113,14 +113,14 @@ class _PaymentOptionsListWidgetState extends State<PaymentOptionsListWidget> {
                 children: [
                   PAText(
                     title,
-                    style: PATextStyles.bold27.copyWith(fontSize: 20),
+                    style: PATextStyles.bold27.copyWith(fontSize: PADimens.fontSize20),
                   ),
                   const SizedBox(height: PADimens.px4),
                   PAText(
                     description,
                     style: PATextStyles.light17.copyWith(
-                      fontSize: 14,
-                      color: PAColors.white.withOpacity(0.7),
+                      fontSize: PADimens.fontSize14,
+                      color: PAColors.white.withOpacity(PADimens.opacity07),
                     ),
                   ),
                 ],

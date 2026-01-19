@@ -39,7 +39,7 @@ class WelcomePage extends StatelessWidget {
                     PAText(
                       'Identify more than 3000+ plants and 88% accuracy.',
                       style: PATextStyles.regular16,
-                    ).padding(const EdgeInsetsDirectional.only(top: 8, start: 20, end: 20)),
+                    ).padding(const EdgeInsetsDirectional.only(top: PADimens.px8, start: PADimens.px20, end: PADimens.px20)),
                   ],
                 ),
               ],

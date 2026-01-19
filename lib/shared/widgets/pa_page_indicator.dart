@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plant_app/core/constants/pa_dimens.dart';
 import 'package:plant_app/shared/theme/pa_colors.dart';
 
 class PAPageIndicator extends StatelessWidget {
@@ -15,8 +16,8 @@ class PAPageIndicator extends StatelessWidget {
     required this.totalPages,
     this.activeColor,
     this.inactiveColor,
-    this.activeSize = 10,
-    this.inactiveSize = 6,
+    this.activeSize = PADimens.px10,
+    this.inactiveSize = PADimens.px6,
   });
 
   @override
@@ -26,7 +27,7 @@ class PAPageIndicator extends StatelessWidget {
       children: List.generate(totalPages, (index) {
         double size = currentPage == index ? activeSize : inactiveSize;
         return Container(
-          margin: const EdgeInsets.symmetric(horizontal: 4),
+          margin: const EdgeInsets.symmetric(horizontal: PADimens.px4),
           width: size,
           height: size,
           decoration: BoxDecoration(

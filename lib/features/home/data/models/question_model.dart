@@ -1,5 +1,5 @@
-import 'package:plant_app/features/home/domain/entities/question.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:plant_app/features/home/domain/entities/question.dart';
 
 part 'question_model.g.dart';
 
@@ -14,13 +14,12 @@ class QuestionModel extends Question {
   @JsonKey(name: 'image_uri')
   final String imageUriField;
 
-  QuestionModel({
-    required int id,
+  const QuestionModel({
+    required super.id,
     required this.titleField,
     required this.subtitleField,
     required this.imageUriField,
   }) : super(
-          id: id,
           question: titleField,
           answer: subtitleField,
           imageUrl: imageUriField,

@@ -58,7 +58,7 @@ class PATextStyles {
 
   static TextStyle regular12 = const TextStyle(
     fontSize: 12,
-    color: Color(0xFF13231BB2),
+    color: Color(0x13231BB2),
   );
 
   static TextStyle light9 = const TextStyle(

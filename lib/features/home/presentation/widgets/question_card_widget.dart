@@ -20,7 +20,7 @@ class QuestionCardWidget extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: 280,
+        width: PADimens.px280,
         margin: const EdgeInsets.symmetric(horizontal: PADimens.px10),
         decoration: BoxDecoration(
           color: PAColors.mainTextColor,
@@ -40,7 +40,7 @@ class QuestionCardWidget extends StatelessWidget {
                       child: const Icon(
                         Icons.image_not_supported,
                         color: Colors.grey,
-                        size: 48,
+                        size: PADimens.iconSize48,
                       ),
                     );
                   },
@@ -54,7 +54,7 @@ class QuestionCardWidget extends StatelessWidget {
                       end: Alignment.bottomCenter,
                       colors: [
                         Colors.transparent,
-                        Colors.black.withOpacity(0.7),
+                        Colors.black.withOpacity(PADimens.opacity07),
                       ],
                     ),
                   ),

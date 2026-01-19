@@ -1,6 +1,6 @@
-import 'package:plant_app/features/home/domain/entities/category.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:plant_app/features/home/data/models/category_image_model.dart';
+import 'package:plant_app/features/home/domain/entities/category.dart';
 
 part 'category_model.g.dart';
 
@@ -13,11 +13,10 @@ class CategoryModel extends Category {
   final CategoryImageModel imageField;
 
   CategoryModel({
-    required int id,
+    required super.id,
     required this.titleField,
     required this.imageField,
   }) : super(
-          id: id,
           name: titleField,
           imageUrl: imageField.url,
         );
