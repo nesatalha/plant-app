@@ -21,7 +21,7 @@ class QuestionCardWidget extends StatelessWidget {
       onTap: onTap,
       child: Container(
         width: 280,
-        margin: const EdgeInsets.only(right: PADimens.px16),
+        margin: const EdgeInsets.symmetric(horizontal: PADimens.px10),
         decoration: BoxDecoration(
           color: PAColors.mainTextColor,
           borderRadius: BorderRadius.circular(PADimens.px12),

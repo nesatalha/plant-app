@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plant_app/shared/theme/pa_colors.dart';
 
 class PAScaffold extends StatelessWidget {
   final Widget body;
@@ -9,6 +10,7 @@ class PAScaffold extends StatelessWidget {
   final FloatingActionButtonLocation? floatingActionButtonLocation;
   final bool enableDeviceBack;
   final bool useSafeArea;
+  final Widget? bottomNavigationBar;
 
   const PAScaffold({
     super.key,
@@ -20,6 +22,7 @@ class PAScaffold extends StatelessWidget {
     this.floatingActionButtonLocation,
     this.enableDeviceBack = true,
     this.useSafeArea = true,
+    this.bottomNavigationBar,
   });
 
   @override
@@ -39,11 +42,12 @@ class PAScaffold extends StatelessWidget {
 
     return Scaffold(
       appBar: appBar,
-      backgroundColor: backgroundColor ?? Theme.of(context).scaffoldBackgroundColor,
+      backgroundColor: backgroundColor ?? PAColors.white,
       resizeToAvoidBottomInset: resizeToAvoidBottomInset,
       body: scaffoldBody,
       floatingActionButton: floatingActionButton,
       floatingActionButtonLocation: floatingActionButtonLocation,
+      bottomNavigationBar: bottomNavigationBar,
     );
   }
 }

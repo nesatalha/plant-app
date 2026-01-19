@@ -10,6 +10,7 @@ abstract class PADimens {
   static const double px22 = 22.0;
   static const double px24 = 24.0;
   static const double px36 = 36.0;
+  static const double px40 = 40.0;
   static const double px124 = 124.0;
   static const double px160 = 160.0;
   static const double px320 = 320.0;
