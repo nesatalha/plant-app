@@ -32,32 +32,6 @@ class PaywallPage extends StatelessWidget {
             width: MediaQuery.of(context).size.width,
             fit: BoxFit.fitWidth,
           ),
-          Align(
-            alignment: Alignment.topRight,
-            child: SafeArea(
-              child: InkWell(
-                onTap: () {
-                  di.getIt<SharedPreferencesService>().setOnboardingCompleted(true);
-                  context.router.push(const HomeRoute());
-                },
-                child: Container(
-                  margin: const EdgeInsetsDirectional.only(end: PADimens.px20),
-                  height: PADimens.px24,
-                  width: PADimens.px24,
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(PADimens.px24),
-                    color: PAColors.black.withOpacity(0.4),
-                  ),
-                  child: const Icon(
-                    Icons.close,
-                    size: PADimens.px14,
-                    color: PAColors.white,
-                  ),
-                ),
-              ),
-            ),
-          ),
           Column(
             children: [
               Expanded(
@@ -95,7 +69,7 @@ class PaywallPage extends StatelessWidget {
                         text: "Try free for 3 days",
                         onPressed: () {
                           di.getIt<SharedPreferencesService>().setOnboardingCompleted(true);
-                          context.router.push(const HomeRoute());
+                          context.router.replace(const HomeRoute());
                         },
                       ).padding(
                         const EdgeInsetsDirectional.symmetric(horizontal: PADimens.px20).copyWith(top: PADimens.px24),
@@ -112,7 +86,29 @@ class PaywallPage extends StatelessWidget {
                 ),
               ),
             ],
-          )
+          ),
+          Align(
+            alignment: Alignment.topRight,
+            child: SafeArea(
+              bottom: false,
+              child: RawMaterialButton(
+                onPressed: () {
+                  di.getIt<SharedPreferencesService>().setOnboardingCompleted(true);
+                  context.router.replace(const HomeRoute());
+                },
+                elevation: 2.0,
+                fillColor: PAColors.black.withOpacity(0.4),
+                constraints: BoxConstraints(minWidth: 0.0),
+                child: const Icon(
+                  Icons.close,
+                  size: PADimens.px16,
+                  color: PAColors.white,
+                ),
+                padding: EdgeInsets.all(PADimens.px8),
+                shape: CircleBorder(),
+              ),
+            ),
+          ),
         ],
       ),
     );
