@@ -12,26 +12,39 @@ class OnboardingPage1 extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Stack(
-          children: [
-            Image.asset(
-              PAAssets.onboardingPage1Bg,
-              fit: BoxFit.scaleDown,
-            ),
-            RichText(
-              text: const TextSpan(
-                style: PATextStyles.medium28,
-                children: [
-                  TextSpan(text: "Take a photo to "),
-                  TextSpan(
-                    text: "identify\n",
-                    style: PATextStyles.extraBold28,
-                  ),
-                  TextSpan(text: "the plant"),
-                ],
+        Expanded(
+          child: Stack(
+            alignment: Alignment.bottomCenter,
+            children: [
+              Align(
+                child: Image.asset(
+                  PAAssets.onboardingPage1Bg,
+                  fit: BoxFit.fitWidth,
+                  width: double.infinity,
+                ),
               ),
-            ).padding(const EdgeInsetsDirectional.only(top: PADimens.px20, start: PADimens.px20, end: PADimens.px20)),
-          ],
+              Positioned(
+                top: 0,
+                left: 0,
+                child: SafeArea(
+                  child: RichText(
+                    text: const TextSpan(
+                      style: PATextStyles.medium28,
+                      children: [
+                        TextSpan(text: "Take a photo to "),
+                        TextSpan(
+                          text: "identify\n",
+                          style: PATextStyles.extraBold28,
+                        ),
+                        TextSpan(text: "the plant"),
+                      ],
+                    ),
+                  ).padding(
+                      const EdgeInsetsDirectional.only(top: PADimens.px20, start: PADimens.px20, end: PADimens.px20)),
+                ),
+              ),
+            ],
+          ),
         ),
       ],
     );
