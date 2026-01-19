@@ -3,6 +3,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:plant_app/core/constants/assets.dart';
 import 'package:plant_app/core/constants/pa_dimens.dart';
+import 'package:plant_app/core/router/app_router.dart';
 import 'package:plant_app/shared/extensions/widget_extensions.dart';
 import 'package:plant_app/shared/theme/pa_colors.dart';
 import 'package:plant_app/shared/widgets/pa_button.dart';
@@ -26,7 +27,7 @@ class WelcomePage extends StatelessWidget {
             child: Stack(
               alignment: Alignment.center,
               children: [
-                Image.asset(PAAssets.onboardingPage1Bg),
+                Image.asset(PAAssets.welcomePageBg),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -46,7 +47,9 @@ class WelcomePage extends StatelessWidget {
           ),
           PAButton(
             text: 'Get Started',
-            onPressed: () {},
+            onPressed: () {
+              context.router.push(const OnboardingRoute());
+            },
           ).padding(
             const EdgeInsetsDirectional.only(
               start: PADimens.px20,
